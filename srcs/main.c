@@ -6,12 +6,27 @@
 /*   By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 11:13:18 by vzhao             #+#    #+#             */
-/*   Updated: 2020/02/05 12:15:32 by vzhao            ###   ########.fr       */
+/*   Updated: 2020/02/05 14:39:10 by vzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/dispatch_ps.h"
 #define CE(x) create_elem(x)
+
+int					ft_strcmp(const char *s1, const char *s2)
+{
+	int				i;
+	unsigned char	*cs1;
+	unsigned char	*cs2;
+
+	i = 0;
+	cs1 = (unsigned char*)s1;
+	cs2 = (unsigned char*)s2;
+	while (cs1[i] && cs1[i] == cs2[i])
+		i++;
+	return (cs1[i] - cs2[i]);
+}
 
 t_stack     *create_elem(int n)
 {
@@ -37,8 +52,14 @@ void    ft_printstack(t_stack **a)
     printf(" end\n");
 }
 
-int     main(void)
+int     main(int ac, char **av)
 {
+    if (ac == 1)
+    {
+        printf("Usage: Enter Operation as Arg\n");
+        printf("(sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, or rrr)\n");
+        return (0);
+    }
     t_stack *a = CE(2);
     t_stack *b = CE(1);
     b->next = CE(3);
@@ -47,8 +68,12 @@ int     main(void)
     a->next->next = CE(6);
     ft_printstack(&a);
     ft_printstack(&b);
-    ra(&a, &b);
+    for (int i = 0; i < PS_OPERATIONS; i++)
+        if (ft_strcmp(av[1], PS_dispatch_table[i].type) == 0)
+            PS_dispatch_table[i].operation(&a, &b);
     printf("new stacks\n");
     ft_printstack(&a);
     ft_printstack(&b);
 }
+
+// cc -L./../libft/ *.c -o test to make executable to test dispatch table

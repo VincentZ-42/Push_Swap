@@ -6,7 +6,7 @@
 /*   By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 15:28:37 by vzhao             #+#    #+#             */
-/*   Updated: 2020/02/05 12:15:37 by vzhao            ###   ########.fr       */
+/*   Updated: 2020/02/05 13:58:12 by vzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void    sa(t_stack **a, t_stack **b)
     *a = second;
     first->next = second->next;
     second->next = first;
-    printf("sa performed\n");
 }
