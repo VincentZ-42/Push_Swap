@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/31 16:17:42 by vzhao             #+#    #+#             */
-/*   Updated: 2020/02/05 12:15:35 by vzhao            ###   ########.fr       */
+/*   Created: 2020/02/05 11:50:35 by vzhao             #+#    #+#             */
+/*   Updated: 2020/02/05 12:04:10 by vzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/* ss: swap a and b  
-** - perform sa and sb at the same time
+/* pb: push b 
+** - Moves 1st element in stack a to top of stack b
+** - Do nothing if there stack a is empty.
 ** Args:
 ** t_stack **a: The head of a linked list (stack a)
 ** t_stack **b: The head of a linked list (stack b)
@@ -21,9 +22,14 @@
 ** Nothing, manipulates pointers
 */
 
-void        ss(t_stack **a, t_stack **b)
+void    pb(t_stack **a, t_stack **b)
 {
-    sa(a, b);
-    sb(a, b);
-    printf("ss performed\n");
+    t_stack *first_of_a;
+
+    if (*a == NULL)
+        return ;
+    first_of_a = *a;
+    *a = first_of_a->next;
+    first_of_a->next = *b;
+    *b = first_of_a;
 }
