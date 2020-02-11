@@ -6,7 +6,7 @@
 /*   By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 11:13:18 by vzhao             #+#    #+#             */
-/*   Updated: 2020/02/05 14:39:10 by vzhao            ###   ########.fr       */
+/*   Updated: 2020/02/11 14:05:54 by vzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include "../includes/dispatch_ps.h"
 #define CE(x) create_elem(x)
 
-int					ft_strcmp(const char *s1, const char *s2)
-{
-	int				i;
-	unsigned char	*cs1;
-	unsigned char	*cs2;
+// int					ft_strcmp(const char *s1, const char *s2)
+// {
+// 	int				i;
+// 	unsigned char	*cs1;
+// 	unsigned char	*cs2;
 
-	i = 0;
-	cs1 = (unsigned char*)s1;
-	cs2 = (unsigned char*)s2;
-	while (cs1[i] && cs1[i] == cs2[i])
-		i++;
-	return (cs1[i] - cs2[i]);
-}
+// 	i = 0;
+// 	cs1 = (unsigned char*)s1;
+// 	cs2 = (unsigned char*)s2;
+// 	while (cs1[i] && cs1[i] == cs2[i])
+// 		i++;
+// 	return (cs1[i] - cs2[i]);
+// }
 
 t_stack     *create_elem(int n)
 {
