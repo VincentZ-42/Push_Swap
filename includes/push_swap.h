@@ -6,7 +6,7 @@
 /*   By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 16:25:30 by vzhao             #+#    #+#             */
-/*   Updated: 2020/01/31 16:32:24 by vzhao            ###   ########.fr       */
+/*   Updated: 2020/02/11 15:33:07 by vzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/global.h"
+# include <limits.h>
 
 typedef struct      s_stack
 {
@@ -21,16 +22,22 @@ typedef struct      s_stack
     struct s_stack  *next;
 }                   t_stack;
 
-void    sa(t_stack **a, t_stack **b);
-void    sb(t_stack **a, t_stack **b);
-void    ss(t_stack **a, t_stack **b);
-void    pa(t_stack **a, t_stack **b);
-void    pb(t_stack **a, t_stack **b);
-void    ra(t_stack **a, t_stack **b);
-void    rb(t_stack **a, t_stack **b);
-void    rr(t_stack **a, t_stack **b);
-void    rra(t_stack **a, t_stack **b);
-void    rrb(t_stack **a, t_stack **b);
-void    rrr(t_stack **a, t_stack **b);
+void            sa(t_stack **a, t_stack **b);
+void            sb(t_stack **a, t_stack **b);
+void            ss(t_stack **a, t_stack **b);
+void            pa(t_stack **a, t_stack **b);
+void            pb(t_stack **a, t_stack **b);
+void            ra(t_stack **a, t_stack **b);
+void            rb(t_stack **a, t_stack **b);
+void            rr(t_stack **a, t_stack **b);
+void            rra(t_stack **a, t_stack **b);
+void            rrb(t_stack **a, t_stack **b);
+void            rrr(t_stack **a, t_stack **b);
+
+t_stack*        create_elem(int n);
+int             check_duplicate(t_stack **a, int number);
+int             atoi_check(char *str, int *error);
+void            create_stack(t_stack **a, int ac, char **av);
+void            PS_exit(char *msg);
 
 #endif 
