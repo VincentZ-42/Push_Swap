@@ -6,7 +6,7 @@
 /*   By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 11:13:18 by vzhao             #+#    #+#             */
-/*   Updated: 2020/02/11 14:53:10 by vzhao            ###   ########.fr       */
+/*   Updated: 2020/02/11 21:02:00 by vzhao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,6 @@
 
 // Right now, checker program just accepts commands and performs
 // operations on manually created stack a and b
-
-static void    ft_printstack(t_stack **a)
-{
-    t_stack *temp = *a;
-    if (!(*a))
-    {
-        printf("empty\n");
-        return ;
-    }
-    while (temp != NULL)
-    {
-        printf(" %d ->", temp->n);
-        temp = temp->next;
-    }
-    printf(" end\n");
-}
 
 int     main(int ac, char **av)
 {
@@ -56,5 +40,3 @@ int     main(int ac, char **av)
     ft_printstack(&a);
     ft_printstack(&b);
 }
-
-// cc -L./../libft/ *.c -o test to make executable to test dispatch table

@@ -6,7 +6,7 @@
 #    By: vzhao <vzhao@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/30 16:48:47 by vzhao             #+#    #+#              #
-#    Updated: 2020/02/11 14:52:38 by vzhao            ###   ########.fr        #
+#    Updated: 2020/02/11 21:00:42 by vzhao            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCDIR = srcs
 INCDIR = includes
 SHARED = swap.c rotate.c \
 		push.c rev_rotate.c \
-		create_stack.c
+		create_stack.c util.c
 
 SRC = $(patsubst %, srcs/%, $(SHARED))
 HEADERS = -I $(LIBDIR) -I $(INCDIR)
